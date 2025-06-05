@@ -1,0 +1,410 @@
+:root {
+  /* Variáveis de cores */
+  --color-header-footer-bg: #000000;
+  --color-text-dark: #1e1e1e;
+  --color-background: #ffffff;
+  --color-gray-light: #f9f9f9;
+  --color-gray-medium: #d3d3d3;
+  --color-gray-dark: #c0c0c0;
+  --color-blue-light: #0077cc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: var(--color-background);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  position: relative;
+  height: 80px;           
+  background-color: var(--color-header-footer-bg);
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  left: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--color-background);
+  text-decoration: none;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Links da navegação */
+nav a {
+  text-decoration: none;
+  color: var(--color-background);
+  font-weight: 500;
+}
+
+/* Links ativos */
+nav a:hover, nav a.active {
+  text-decoration: underline;
+}
+
+/* Imagem em slider menor (30% largura) */
+.slide-image.small {
+  max-width: 30%;
+  height: auto;
+}
+
+/* Linha flexível para layout com alinhamento central e espaçamento */
+.row {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+.block.text {
+  flex: 1 1 50%;
+}
+
+
+.block.text.left {
+  text-align: justify;
+}
+
+
+.block.text.right {
+  text-align: justify;
+}
+
+
+.block.image {
+  flex: 1 1 45%;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Texto posicionado sobre a imagem no centro */
+.block.image .image-text {
+  position: absolute;
+  color: var(--color-background);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Imagem de fundo para blocos de imagem direita e esquerda */
+.block.image.right {
+  background-image: url('/assets/images/img4.jpg');
+}
+
+.block.image.left {
+  background-image: url('/assets/images/img4.jpg');
+}
+
+/* Contêiner flexível vertical para alinhar elementos à esquerda */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Contêiner flexível vertical para alinhar elementos à direita */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Controles com espaçamento, fundo cinza claro e borda inferior */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background-color: var(--color-gray-light);
+  border-bottom: 1px solid var(--color-gray-medium);
+  flex-wrap: wrap;
+}
+
+/* Alinhamento e espaçamento para controles à esquerda */
+.left-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Label dentro dos controles: fonte mais forte e cor escura */
+.left-control label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+}
+
+/* Select de anos com padding, borda arredondada e transições */
+.year-select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-dark);
+  background-color: var(--color-gray-medium);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111111;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+/* Foco no select com sombra discreta */
+.year-select:focus {
+  box-shadow: 0 0 0 1px #bfbfbf;
+}
+
+/* Controles alinhados à direita com espaçamento */
+.right-control {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Labels dos controles com fonte em negrito */
+.controls label {
+  font-weight: bold;
+}
+
+/* Ajuste de padding e tamanho de fonte para select */
+.year-select {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+}
+
+/* Ícone de ordenação com transição para animações */
+.sort-icon {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Botão de ordenação: sem fundo, cursor pointer, tamanho maior */
+.sort-button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 26rem;
+}
+
+/* Cor do botão ao passar o mouse */
+.sort-button:hover {
+  color: var(--color-blue-light);
+}
+
+/* Accordion container com margens */
+.accordion {
+  margin: 1.5rem 1.5rem;
+}
+
+/* Item do accordion */
+.accordion-item {
+  background-color: var(--color-gray-medium);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* header do accordion: flexbox, cursor pointer e fonte forte */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+/* Cor de fundo ao passar o mouse no cabeçalho do accordion */
+.accordion-header:hover {
+  background-color: var(--color-gray-dark);
+}
+
+/* Título da corrida com flexível para ocupar espaço */
+.race-title {
+  flex: 1;
+  font-weight: 600;
+}
+
+/* Data da corrida com texto nowrap */
+.race-date {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Botão circular da seta para abrir/fechar accordion */
+.arrow-icon {
+  width: 34px;
+  height: 34px;
+  margin-left: 20px;
+  border-radius: 50%;
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+/* Ícone dentro do botão circular */
+.arrow-icon i {
+  font-size: 14px;
+  color: var(--color-text-dark);
+  line-height: 0;
+}
+
+/* Classe para girar a seta quando o accordion está aberto */
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Corpo do accordion */
+.accordion-body {
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+/* Grid para sessões da corrida */
+.session-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+/* Card individual da sessão */
+.session {
+  flex: 1 1 22%;
+  background-color: var(--color-background);
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover para sessão */
+.session:hover {
+  background-color: var(--color-gray-light);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Nome da sessão  */
+.session-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #003366;
+}
+
+/* Horário da sessão */
+.session-time {
+  color: var(--color-blue-light);
+  font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  background-color: var(--color-header-footer-bg);
+  text-align: center;
+  gap: 0.5rem;
+}
+
+/* Logo do footer */
+.footer-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-background);
+}
+
+/* Texto de copyright no footer */
+.footer-copy {
+  font-size: 0.9rem;
+  color: var(--color-background);
+}
+
+/* RESPONSIVO */
+
+
+@media (max-width: 768px) {
+  .slider {
+    height: 40vh;
+  }
+
+  .slide {
+    font-size: 1.5rem;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    padding: 0.75rem;
+  }
+
+  .block {
+    flex: 1 1 100%;
+    text-align: center !important;
+  }
+
+  .block.image {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .slider {
+    height: 30vh;
+  }
+
+  .slide {
+    font-size: 1rem;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    padding: 0.75rem;
+  }
+
+  #prevBtn {
+    left: 1.5rem;
+  }
+
+  #nextBtn {
+    right: 1.5rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
